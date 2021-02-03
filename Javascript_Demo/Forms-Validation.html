@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Form Validations JavaScript</title>
+    <script>
+
+        function checkFormData(){
+            var message = "";
+            var flag =0;
+            //Access the TextBox
+            var tname = document.getElementById("txt_name").value;
+            if(document.getElementById("txt_name").value == "")
+            {
+                alert("Name must be filled out"); 
+                document.getElementById("chkbox").checked = false;
+            }
+            
+                
+            var temail = document.getElementById("txt_email").value;
+            if(document.getElementById("txt_email").value == "")
+            {
+                alert("Email must be filled out");
+                document.getElementById("chkbox").checked = false;
+            }
+            
+                    
+            var tage = document.getElementById("txt_age").value;
+            if(document.getElementById("txt_age").value == "")
+            {
+                alert("Age must be filled out");
+                document.getElementById("chkbox").checked = false;
+            }
+            
+                
+            //Access the Radio Button
+            var tgender1 = document.getElementById("radio1").checked;
+            var tgender2 = document.getElementById("radio2").checked;
+
+            //Access the Checkbox
+            var tchkbox = document.getElementById("chkbox").checked;
+            if(document.getElementById("chkbox").checked == false)
+            {
+                alert("Please Agree to Our Terms");
+                flag=1;
+            }
+            else
+                flag=0;
+                
+
+            if(flag == 0)
+            {
+                message = "Name: " + tname + "<br>";
+                message += "Email: " + temail + "<br>";
+                message += "Age: " + tage + "<br>";
+                message += "Male: " + tgender1 + "<br>";
+                message += "Female: " + tgender2 + "<br>";
+                message += "Agreed: " + tchkbox + "<br>";
+
+                document.getElementById("tmessage").innerHTML = message;
+            }
+            
+
+
+        }
+    </script>
+</head>
+
+<body>
+
+<h1>Form Validations</h1>
+<form action="https://wpfreelancer.com/" method="get">
+
+    Your Name: <input type="text" name="tname" id="txt_name" /> <br><br>
+    Your Email: <input type="text" name="temail" id="txt_email" /> <br><br>
+    Your Age: <input type="text" name="tage" id="txt_age" /> <br><br>
+
+    Male <input id ="radio1" name="gender" type="radio" checked>
+    Female <input id ="radio2" name="gender" type="radio"> <br><br>
+
+    <input type="checkbox" id="chkbox" /> Agree to our Terms <br> <br>
+
+    <input type="button" name="submit" value="Submit"
+           onclick="checkFormData();" />
+
+</form>
+<p id="tmessage"></p>
+</body>
+
+</html>
