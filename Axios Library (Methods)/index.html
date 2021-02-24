@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JS Axios Demo</title>
+    <!-- Latest compiled and minified CSS -->
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script> 
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Welcome To Axios</h1>
+        <h4>This applications uses Axios. Axios is a Promise-based HTTP client for JavaScript which can be used in your front-end application and in your Node.js backend. </h4>
+      </div>
+      <div class="panel panel-primary">
+        <div class="panel-heading">GET Request</div>
+        <div class="panel-body">
+          <button class="btn btn-primary" onclick="performGetRequest1()">Get Todos</button>
+          <button class="btn btn-warning" onclick="clearOutput()">Clear</button>
+          <div class="panel-body" id="getResult1"></div>
+        </div>
+      </div>
+      <div class="panel panel-primary">
+        <div class="panel-heading">GET Request with Paramaters</div>
+        <div class="panel-body">
+          <input type="text" class="form-control" id="todoId" placeholder="Todo ID ..(Enter ID)"/><br/>
+          <button class="btn btn-primary" onclick="performGetRequest2()">Get Todos</button>
+          <button class="btn btn-warning" onclick="clearOutput()">Clear</button>
+          <div class="panel-body" id="getResult2"></div>
+        </div>
+      </div>
+       <div class="panel panel-primary">
+        <div class="panel-heading">POST Request</div>
+        <div class="panel-body">
+              <input type="text" class="form-control" id="todoTitle" placeholder="Todo Title ..."><br/> 
+            <button type="submit" class="btn btn-primary" onclick="performPostRequest()">Send</button>
+            <button class="btn btn-warning" onclick="clearOutput()">Clear</button>
+          <div class="panel-body" id="postResult"></div>
+        </div>
+      </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">PUT Request</div>
+          <div class="panel-body">
+            <input type="text" class="form-control" id="PutId" placeholder="PUT Todo Title(For id=1)"/><br/>
+            <button class="btn btn-primary" onclick="performPutRequest()">PUT Todos</button>
+            <button class="btn btn-warning" onclick="clearOutput()">Clear</button>
+            <div class="panel-body" id="putResult"></div>
+          </div>
+        </div>
+    
+        <div class="panel panel-primary">
+          <div class="panel-heading">PATCH Request</div>
+           <div class="panel-body">
+           <input type="text" class="form-control" id="PatchId" placeholder="PATCH TODO TITLE(For id=5)"/><br/>
+           <button class="btn btn-primary" onclick="performPatchRequest()">PATCH Todos</button>
+           <button class="btn btn-warning" onclick="clearOutput()">Clear</button>
+           <div class="panel-body" id="patchResult"></div>
+         </div>
+        </div>
+      <div>
+      <div class="panel panel-primary">
+       <div class="panel-heading">DELETE Request</div>
+        <div class="panel-body">
+        <input type="text" class="form-control" id="DeleteId" placeholder="DELETE TODO ID..(Enter ID)"/><br/>
+        <button class="btn btn-primary" onclick="performDeleteRequest()">PUT Todos</button>
+        <button class="btn btn-warning" onclick="clearOutput()">Clear</button>
+        <div class="panel-body" id="deleteResult"></div>
+      </div>
+    </div>
+    
+  </body>
+</html>
